@@ -58,13 +58,6 @@ client.run(BOT_TOKEN)
 
 
 
-
-def signal_handler(sig, frame):
-    print('You pressed Ctrl+C! :O')
-    client.close()
-    sys.exit(0)
-signal.signal(signal.SIGINT, signal_handler)
-
 while True:
     print("Waiting for input (examples: help, exit):")
     entered_text = input()
