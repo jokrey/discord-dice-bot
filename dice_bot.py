@@ -36,14 +36,14 @@ async def on_message(message):
             except:
                 await message.channel.send('Thanks for trying {0.author.mention}, but that is not is just nothing I can roll. Tried !help?'.format(message))
         elif command in accepted_help_commands:
-            await message.channel.send('Hi {0.author.mention}, you can role a dice using \"!dice <dice list>\".\n'
+            await message.channel.send('Hi {0.author.mention}, you can roll a dice using \"!dice <dice list>\".\n'
                                        'Some possible dice are \"D6, D8, D10, D20\".\n'
                                        'You can also roll multiple of the same dice at once using \"3xD20\"\n'
                                        'Or different dice using \"D20, D2, D4\"\n'
                                        'Also possible is to add a constant to a dice roll using for example \"D6+4\"\n'
                                        'It is also possible to sum or prod the result of a dice roll: \"+3xD4\"'.format(message))
         elif command == 'hi':
-            await message.channel.send('Hi {0.author.mention}, role a dice?'.format(message))
+            await message.channel.send('Hi {0.author.mention}, roll a dice?'.format(message))
         else:
             await message.channel.send('Hi {0.author.mention}, I don\'t recognise your humble request. If you want help, try !help'.format(message))
 
