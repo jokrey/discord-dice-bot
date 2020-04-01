@@ -55,13 +55,3 @@ async def on_ready():
     print('---beginning operations---')
 
 client.run(BOT_TOKEN)
-
-
-
-while True:
-    print("Waiting for input (examples: help, exit):")
-    entered_text = input()
-    if entered_text == 'exit':
-        client.close()
-    elif entered_text == 'help':
-        print("current, you can only use the commands 'exit' and 'help'")
