@@ -3,7 +3,7 @@ import signal
 import discord
 import sys
 
-from dice_bot_discord.dice import parse_to_result_str
+from dice import parse_to_result_str
 
 if len(sys.argv) >= 2:
     BOT_TOKEN = sys.argv[1]
