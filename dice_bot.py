@@ -3,7 +3,7 @@ import signal
 import discord
 import sys
 
-from dice import parse_to_result_str
+from dice import parse_to_result_str # this is red in pycharm, but it works
 
 if len(sys.argv) >= 2:
     BOT_TOKEN = sys.argv[1]
