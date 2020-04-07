@@ -175,7 +175,7 @@ def extract_first_number(s: str):
 
 def extract_single_dice(part: str):
     part, number1 = extract_first_number(part)
-    if len(part) > 0 and (part[0] == '+' or part[0] == '*' or part[0] == '-'):
+    if len(part) > 0 and (part[0] == '+' or part[0] == '*' or part[0] == '-' or part[0] == '/'):
         number2 = None
     else:
         part, number2 = extract_first_number(part)
@@ -223,7 +223,7 @@ def parse_part(results: [str], original: str):
         elif len(part) > 0 and part[0] == '/':
             part, number = extract_first_number(part[1::])
             raw_res = config.generate_random_results()
-            results.append('{'+str(raw_res) + '}/' + str(number) + '=' + str(raw_res.div_each(number)))
+            results.append('{'+str(raw_res) + '}/' + str(number) + '=' + str(', '.join(str(float("{:.2f}".format(x))) for x in raw_res.div_each(number))))
         else:
             results.append(str(config.generate_random_results()))
 
