@@ -129,6 +129,12 @@ class DiceResults:
     def add_each(self, number):
         return [x + number for x in self.results]
 
+    def mul_each(self, number):
+        return [x * number for x in self.results]
+
+    def minus_each(self, number):
+        return [x - number for x in self.results]
+
 
 def helper_trunc_until_first_number(s: str):
     while len(s) > 0 and not (s[0].isdigit() or s[0] == '-'):
@@ -202,6 +208,14 @@ def parse_part(results: [str], original: str):
             part, number = extract_first_number(part)
             raw_res = config.generate_random_results()
             results.append(str(config) + '+' + str(number) + '=' + str(raw_res.add_each(number)))
+        elif len(part) > 0 and part[0] == '*':
+            part, number = extract_first_number(part)
+            raw_res = config.generate_random_results()
+            results.append(str(config) + '*' + str(number) + '=' + str(raw_res.mul_each(number)))
+        elif len(part) > 0 and part[0] == '-':
+            part, number = extract_first_number(part)
+            raw_res = config.generate_random_results()
+            results.append(str(config) + '-' + str(number) + '=' + str(raw_res.minus_each(number)))
         else:
             results.append(str(config.generate_random_results()))
 
