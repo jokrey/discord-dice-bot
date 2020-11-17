@@ -215,7 +215,6 @@ def parse_part(results: [str], original: str):
             part, number = extract_first_number(part[1::])
             raw_res = config.generate_random_results()
             results.append('{'+str(raw_res) + '}*' + str(number) + '=' + str(raw_res.mul_each(number)))
-            # results.append(str(config) + '*' + str(number) + '=' + str(raw_res.mul_each(number)))
         elif len(part) > 0 and part[0] == '-':
             part, number = extract_first_number(part[1::])
             raw_res = config.generate_random_results()
